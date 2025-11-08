@@ -14,8 +14,9 @@ jobs:
         runs-on: ubuntu-latest
         environment: ${{ inputs.target-env }}
         env:
-            my-env-value: ${{ vars.My_ENV_VAR  || 'default-env-value' }}
+            my-env-value: ${{ vars.MY_ENV_VALUE|| 'default-env-value' }}
+            db-name: ${{ vars.DB}}
         steps:
             - name: Echo Environment
               run: |
-                echo  "Env variable: ${{env.my-env-value}}"
+                echo  "Env variable: ${{env.my-env-value}} DB Name: ${{env.db-name}}"
