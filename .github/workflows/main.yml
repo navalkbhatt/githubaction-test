@@ -30,7 +30,7 @@ jobs:
     - name: Test Step
       run: |
         echo "Running tests...${{ needs.build.outputs.build_output }}"
-        exit 0
+        exit 1  # Simulate a test failure
 
   deploy:
     if: ${{ success() }}
