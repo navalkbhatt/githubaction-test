@@ -1,8 +1,10 @@
-name: Test Workflow
+name: Test 
+run-name: CI Pipeline ${{ inputs.example_input }}
 on:
     workflow_dispatch:
         inputs:
             example_input:
+                type: string
                 description: 'An example input'
                 required: false
                 default: 'default value'
